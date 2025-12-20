@@ -263,26 +263,50 @@
             font-weight: bold;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .news-section {
-                padding: 30px 20px;
-		padding: 15px 10px;    /* Reduces side padding for more room */
-     	   	height: auto;           /* Allows the header to grow to fit both lines */
-            }
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stacks logo on top of nav */
+        padding: 15px 10px;    
+        height: auto;           
+    }
 
-	    .image-with-space {
- 		 margin-top: 100px;
-	    }
+    .logo {
+        margin-bottom: 15px;    
+        height: 40px;           
+    }
 
-            .news-content h1 {
-                font-size: 36px;
-            }
+    nav {
+        display: grid; /* Use grid to create the 2-column layout */
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 10px;      /* Space between items */
+        width: 100%;
+        padding: 0 10px;
+    }
 
-            .featured-stories {
-                flex-direction: column;
-                gap: 30px;
-            }
+    nav a {
+        margin-left: 0;         
+        font-size: 14px;        
+        justify-content: center; /* Centers text and icons within the column */
+    }
+
+    /* Pushes the content down to prevent overlap from the taller mobile header */
+    body {
+        padding-top: 180px;     
+    }
+
+    .news-section {
+        padding: 30px 20px;
+    }
+
+    .news-content h1 {
+        font-size: 36px;
+    }
+
+    .featured-stories {
+        flex-direction: column;
+        gap: 30px;
+    }
             
             .featured-card {
                 padding: 20px;
