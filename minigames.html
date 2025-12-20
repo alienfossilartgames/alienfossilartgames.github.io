@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Fossil - Mini Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid rgba(0,255,136, 1)
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            transition: filter 0.3s;
+        }
+
+        .logo:hover {
+            filter: brightness(0) invert(0) drop-shadow(0 0 10px #00ff88);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        nav a.active {
+            color: #00ccff;
+        }
+
+        /* ----------------------------------- */
+        /* MINI GAMES SPECIFIC STYLES */
+        /* ----------------------------------- */
+
+        .page-banner {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('images/placeholder_mini_banner.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+        }
+
+        .page-banner h1 {
+            font-size: 56px;
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Vertical Row Layout */
+        .mini-game-row {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .mini-game-row:hover {
+            transform: scale(1.02);
+            border-color: #00ccff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Placeholder graphic on the left */
+        .game-art-placeholder {
+            flex: 0 0 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #111, #333);
+            border: 2px solid #00ff88;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Text Content on the right */
+        .game-info {
+            flex: 1;
+        }
+
+        .game-info h2 {
+            font-size: 32px;
+            color: #00ccff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .game-info p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .play-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #00ff88;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: opacity 0.2s;
+        }
+
+        .play-btn:hover {
+            opacity: 0.8;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/AlienFossil_WORDS.png" alt="Alien Fossil Logo">
+        <nav>
+            <a href="index.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="games.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                    <path d="M6 11h.01M10 11h.01M6 15h.01M10 15h.01M16 11l2 2 2-2M16 15l2-2 2 2"></path>
+                </svg>
+                Games
+            </a>
+            <a href="news.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                    <path d="M18 14h-8"></path>
+                    <path d="M15 18h-5"></path>
+                    <path d="M10 6h8v4h-8V6Z"></path>
+                </svg>
+                News
+            </a>
+            <a href="#merch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Merch
+            </a>
+            <a href="https://www.drivethrurpg.com/en/publisher/26131/alien-fossil-art", target=“_blank”>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Store
+            </a>
+            <a href="about.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+        </nav>
+    </header>
+
+    <div class="page-banner">
+        <h1>Mini Games</h1>
+        <p style="color: #00ccff; font-weight: bold; letter-spacing: 2px;">Bite-sized experiences. Endless fun.</p>
+    </div>
+
+    <main class="container">
+
+        <div class="mini-game-row">
+            <div class="game-art-placeholder">
+                <img class="game-art-placeholder" src="images/CowCannon_TitleScreen.png" alt="Cow Cannon">
+            </div>
+            <div class="game-info">
+                <h2>Cow Cannon</h2>
+                <p>Ready, Aim, MOO! A simple yet addicting physics game where you fire a cow out of a high-powered cannon. Adjust your angle, manage your power, and try to launch your bovine friend across record-breaking distances. How far can you fly?</p>
+                <a href="cowcannon.html" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <div class="mini-game-row">
+            <div class="game-art-placeholder">
+                <img  class="game-art-placeholder"  src="images/itDotN.jpg" alt="In the Dead of the Night">
+            </div>
+            <div class="game-info">
+                <h2>In the Dead of the Night</h2>
+                <p>The sun has gone down, and the dead have risen. In this top-down survival shooter, you must navigate through the shadows to rescue survivors trapped in the apocalypse. Blast through hordes of zombies, scavenge for ammo, and make it to the extraction point before you become one of them.</p>
+                <a href="inthedeadofthenight.html" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <div class="mini-game-row">
+            <div class="game-art-placeholder">
+                <img  class="game-art-placeholder" src="images/ShapeInvaders.jpg" alt="Shape Invaders">
+            </div>
+            <div class="game-info">
+                <h2>Shape Invaders</h2>
+                <p>A geometric twist on the classic arcade staple. Defend your sector against waves of descending Shape Invaders. This high-speed clone of the arcade legend features pulsing neon visuals, power-ups, and escalating difficulty that will test your reflexes to the limit.</p>
+                <a href="shapeinvaders.html" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+        <div class="mini-game-row">
+            <div class="game-art-placeholder">
+                <img  class="game-art-placeholder" src="images/Tanks1.jpg" alt="Battle Tanks">
+            </div>
+            <div class="game-info">
+                <h2>Battle Tanks</h2>
+                <p>Armored warfare at your fingertips! In this never-ending tank battle game, you face off against an infinite stream of enemy units. Use the terrain for cover, time your shots with precision, and see how long you can hold the line in this test of mechanical endurance.</p>
+                <a href="tanks.html" class="play-btn">Play Now</a>
+            </div>
+        </div>
+
+    </main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4 class="footer-heading">Explore</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="games.html">Table Top Games</a></li>
+                <li><a href="games.html#video">Video Games</a></li> 
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <p>Email: <a href="mailto:alienfosdilgames@gmail.com">alienfosdilgames@gmail.com</a></p>
+            <p>Location: Hopewell Junction, NY</p>
+            
+            <a href="contact.html" class="footer-contact-btn">Open Contact Form</a>
+        </div>
+
+        <div class="footer-section footer-legal">
+            <h4 class="footer-heading">Legal</h4>
+            <ul>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Alien Fossil. All rights reserved.</p>
+    </div>
+</footer>
+<style>
+    /* ----------------------------------- */
+    /* FOOTER STYLES */
+    /* ----------------------------------- */
+    .site-footer {
+        background: #000;
+        color: #fff;
+        padding: 40px 50px 10px;
+        border-top: 3px solid #00ff88; /* A bright divider line */
+        margin-top: auto; /* Ensures footer sits at bottom if page content is short */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        gap: 30px;
+    }
+
+    .footer-section {
+        flex: 1 1 200px; /* Allows sections to wrap and grow/shrink */
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        /* Using the gradient from the homepage headers */
+        background: linear-gradient(90deg, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section a, .footer-section p {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
+
+    /* Hover effect for standard links */
+    .footer-section ul a:hover, .footer-section p a:hover {
+        color: #00ff88; 
+    }
+    
+    /* NEW BUTTON STYLE */
+    .footer-contact-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00ff88, #00ccff);
+        color: #000 !important; /* Force black text for contrast */
+        font-weight: bold;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .footer-contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 255, 136, 0.4);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        color: #888;
+        padding-bottom: 10px;
+    }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .site-footer {
+            padding: 30px 20px 10px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 100%;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05); /* Separator */
+        }
+        
+        .footer-section:last-child {
+            border-bottom: none;
+        }
+
+        .footer-bottom {
+            margin-top: 10px;
+        }
+    }
+</style>
+
+</body>
+</html>

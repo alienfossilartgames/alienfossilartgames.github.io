@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Fossil - News & Updates</title>
+    <style>
+        /* All necessary base, header, and footer CSS for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            color: #fff;
+            overflow-x: hidden;
+            padding-top: 80px; 
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid rgba(0,255,136, 1)
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            transition: filter 0.3s;
+        }
+
+        .logo:hover {
+            filter: brightness(0) invert(0) drop-shadow(0 0 10px #00ff88);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        nav a.active {
+            color: #00ccff;
+        }
+        
+        /* Footer styles */
+        .site-footer {
+            background: #000;
+            color: #fff;
+            padding: 40px 50px 10px;
+            border-top: 3px solid #00ff88;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a, .footer-section p {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #00ff88; 
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #888;
+            padding-bottom: 10px;
+        }
+
+        /* ----------------------------------- */
+        /* NEWS PAGE STYLES */
+        /* ----------------------------------- */
+        .news-section {
+            padding: 50px 80px;
+            min-height: calc(100vh - 80px); 
+        }
+
+        .news-content {
+            max-width: 1200px;
+            margin: auto;
+            opacity: 0;
+            animation: fadeInContent 1s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInContent {
+            to { opacity: 1; }
+        }
+
+        .news-content h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 15px;
+        }
+        
+        /* Featured Stories Section (2-column layout) */
+        .featured-stories {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .featured-card {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #00ccff;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .featured-card:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .featured-card h2 {
+            font-size: 28px;
+            color: #00ff88;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .featured-card .date {
+            display: block;
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .featured-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* Past Stories Section (Row layout) */
+        .past-stories h2 {
+            font-size: 36px;
+            color: #00ccff;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .past-story-row {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .past-story-row:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 5px solid #00ccff;
+            padding-left: 15px;
+        }
+        
+        .past-story-row:last-child {
+            border-bottom: none;
+        }
+
+        .past-story-row .date {
+            flex: 0 0 120px; /* Fixed width for date */
+            font-size: 14px;
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .past-story-row .title {
+            flex: 1;
+            font-size: 18px;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        .past-story-row .tag {
+            font-size: 12px;
+            padding: 4px 8px;
+            background: #00ccff;
+            color: #000;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .news-section {
+                padding: 30px 20px;
+            }
+
+            .news-content h1 {
+                font-size: 36px;
+            }
+
+            .featured-stories {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .featured-card {
+                padding: 20px;
+            }
+
+            .featured-card h2 {
+                font-size: 24px;
+            }
+            
+            .past-stories h2 {
+                font-size: 28px;
+            }
+
+            .past-story-row {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            
+            .past-story-row .date {
+                flex: 1 1 100%; /* Date takes full width on small screens */
+                margin-bottom: 5px;
+            }
+            
+            .past-story-row .title {
+                flex: 1 1 auto;
+                margin-right: 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="images/AlienFossil_WORDS.png" alt="Alien Fossil Logo">
+        <nav>
+            <a href="index.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="games.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                    <path d="M6 11h.01M10 11h.01M6 15h.01M10 15h.01M16 11l2 2 2-2M16 15l2-2 2 2"></path>
+                </svg>
+                Games
+            </a>
+            <a href="news.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                    <path d="M18 14h-8"></path>
+                    <path d="M15 18h-5"></path>
+                    <path d="M10 6h8v4h-8V6Z"></path>
+                </svg>
+                News
+            </a>
+            <a href="#merch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Merch
+            </a>
+            <a href="https://www.drivethrurpg.com/en/publisher/26131/alien-fossil-art", target=“_blank”>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Store
+            </a>
+            <a href="about.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+        </nav>
+    </header>
+
+    <main class="news-section">
+        <div class="news-content">
+	<img src="images/newsHeader.png" alt="the Heat" width="100%" height="auto">
+            <h1>Latest Excavations & Updates</h1>
+
+            <div class="featured-stories">
+                
+                <article class="featured-card">
+                    <span class="date">November 28, 2025</span>
+                    <h2>Eternal Forge: Digital Adaptation Enters Closed Alpha!</h2>
+                    <p>The highly anticipated digital version of our flagship tabletop RPG, Eternal Forge, has officially moved into Closed Alpha testing! We are thrilled to share the first look at the immersive UI and core engine, built to capture the 'rabbit-hole' lore of the original game...</p>
+                    <p style="margin-top:15px; color:#00ccff;">[Read Full Article]</p>
+                </article>
+
+                <article class="featured-card">
+                    <span class="date">October 15, 2025</span>
+                    <h2>New Merch Drop: World of the Great Work Concept Art Prints</h2>
+                    <p>Dive deep into the rich visual lore of our next game, The Great Work. We've released a limited run of high-resolution concept art prints, detailing the ancient civilizations and alien fossils that drive the narrative. Available now in the Alien Fossil Store...</p>
+                    <p style="margin-top:15px; color:#00ccff;">[Shop Now]</p>
+                </article>
+            </div>
+
+            <div class="past-stories">
+                <h2>Past Digs</h2>
+                
+                <div class="past-story-row">
+                    <span class="date">Sept 10, 2025</span>
+                    <span class="title">Kaiju Klash Dev Diary #4: Designing Cinematic Destruction</span>
+                    <span class="tag">Video Game</span>
+                </div>
+                
+                <div class="past-story-row">
+                    <span class="date">Aug 20, 2025</span>
+                    <span class="title">Meet the Team: Q&A with Lead Lore Architect, Dr. Aris Thorne</span>
+                    <span class="tag">Company</span>
+                </div>
+
+                <div class="past-story-row">
+                    <span class="date">July 31, 2025</span>
+                    <span class="title">Kickstarter Success: Eternal Forge Expansion fully funded!</span>
+                    <span class="tag">Tabletop</span>
+                </div>
+                
+                <div class="past-story-row">
+                    <span class="date">June 5, 2025</span>
+                    <span class="title">Alien Fossil Announces Partnership with Photon Engine for next title</span>
+                    <span class="tag">Company</span>
+                </div>
+                
+                <div class="past-story-row">
+                    <span class="date">May 1, 2025</span>
+                    <span class="title">First Concept Art Revealed for New Strategy Game: 'The Great Work'</span>
+                    <span class="tag">Tabletop</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+  <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">      
+	<h4 class="footer-heading">Explore</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="games.html">Table Top Games</a></li>
+                <li><a href="games.html#video">Video Games</a></li> 
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <p>Email: <a href="mailto:alienfosdilgames@gmail.com">alienfosdilgames@gmail.com</a></p>
+            <p>Location: Hopewell Junction, NY</p>
+            
+            <a href="contact.html" class="footer-contact-btn">Open Contact Form</a>
+        </div>
+
+        <div class="footer-section footer-legal">
+            <h4 class="footer-heading">Legal</h4>
+            <ul>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Alien Fossil. All rights reserved.</p>
+    </div>
+</footer>
+<style>
+    /* ----------------------------------- */
+    /* FOOTER STYLES */
+    /* ----------------------------------- */
+    .site-footer {
+        background: #000;
+        color: #fff;
+        padding: 40px 50px 10px;
+        border-top: 3px solid #00ff88; /* A bright divider line */
+        margin-top: auto; /* Ensures footer sits at bottom if page content is short */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        gap: 30px;
+    }
+
+    .footer-section {
+        flex: 1 1 200px; /* Allows sections to wrap and grow/shrink */
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        /* Using the gradient from the homepage headers */
+        background: linear-gradient(90deg, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section a, .footer-section p {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
+
+    /* Hover effect for standard links */
+    .footer-section ul a:hover, .footer-section p a:hover {
+        color: #00ff88; 
+    }
+    
+    /* NEW BUTTON STYLE */
+    .footer-contact-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00ff88, #00ccff);
+        color: #000 !important; /* Force black text for contrast */
+        font-weight: bold;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .footer-contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 255, 136, 0.4);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        color: #888;
+        padding-bottom: 10px;
+    }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .site-footer {
+            padding: 30px 20px 10px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 100%;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05); /* Separator */
+        }
+        
+        .footer-section:last-child {
+            border-bottom: none;
+        }
+
+        .footer-bottom {
+            margin-top: 10px;
+        }
+    }
+</style>
+
+</body>
+</html>

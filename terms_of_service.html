@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Fossil - Terms of Service</title>
+    <style>
+        /* Standard site styles for consistency (omitted for brevity, assume all shared CSS from Privacy Policy is here) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            color: #fff;
+            overflow-x: hidden;
+            padding-top: 80px; 
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid rgba(0,255,136, 1)
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            transition: filter 0.3s;
+        }
+
+        .logo:hover {
+            filter: brightness(0) invert(0) drop-shadow(0 0 10px #00ff88);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        nav a.active {
+            color: #00ccff;
+        }
+        
+        /* Footer styles */
+        .site-footer {
+            background: #000;
+            color: #fff;
+            padding: 40px 50px 10px;
+            border-top: 3px solid #00ff88;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a, .footer-section p {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #00ff88; 
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            color: #888;
+            padding-bottom: 10px;
+        }
+        
+        /* TOS Page Specific Styles (using same class names as Policy) */
+        .policy-section {
+            padding: 50px 80px;
+            min-height: 100vh; 
+        }
+
+        .policy-content {
+            max-width: 1000px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInContent 1s ease-out forwards;
+        }
+
+        @keyframes fadeInContent {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .policy-content h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 15px;
+        }
+
+        .policy-content h2 {
+            font-size: 28px;
+            color: #00ccff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00ccff;
+            padding-left: 10px;
+        }
+
+        .policy-content p, .policy-content ul {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .policy-content ul {
+            padding-left: 40px;
+            list-style: disc;
+        }
+
+        .policy-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .policy-content strong {
+            color: #00ff88;
+        }
+        
+        .disclaimer-box {
+            border: 1px solid #ff0000;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #ff5555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .policy-section {
+                padding: 30px 20px;
+            }
+            .policy-content h1 {
+                font-size: 36px;
+            }
+            .policy-content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <img class="logo" src="images/AlienFossil_WORDS.png" alt="Alien Fossil Logo">
+        <nav>
+            <a href="index.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <a href="games.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                    <path d="M6 11h.01M10 11h.01M6 15h.01M10 15h.01M16 11l2 2 2-2M16 15l2-2 2 2"></path>
+                </svg>
+                Games
+            </a>
+            <a href="news.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                    <path d="M18 14h-8"></path>
+                    <path d="M15 18h-5"></path>
+                    <path d="M10 6h8v4h-8V6Z"></path>
+                </svg>
+                News
+            </a>
+            <a href="#merch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+                Merch
+            </a>
+            <a href="https://www.drivethrurpg.com/en/publisher/26131/alien-fossil-art", target=“_blank”>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Store
+            </a>
+            <a href="about.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+        </nav>
+    </header>
+
+    <main class="policy-section">
+        <div class="policy-content">
+            <h1>Terms of Service</h1>
+            <p><strong>Last Updated: December 7, 2025</strong></p>
+
+            <p>Please read these Terms of Service ("Terms") carefully before using the Alien Fossil website or purchasing any of our games or merchandise. By accessing or using the Service, you agree to be bound by these Terms.</p>
+            
+            <h2>1. Agreement to Terms</h2>
+            <p>These Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Alien Fossil ("we," "us," or "our"), concerning your access to and use of the website. You agree that by accessing the site, you have read, understood, and agreed to be bound by all of these Terms of Service. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF SERVICE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE.</p>
+            
+            <h2>2. Intellectual Property Rights</h2>
+            <p>All content on the website, including the "Alien Fossil" name and logo, all game titles (Eternal Forge, Kaiju Klash, The Great Work), text, graphics, designs, audio, digital downloads, and all intellectual property related to our games and worlds are owned or licensed by us.</p>
+            <p>The content is provided to you "AS IS" for your information and personal use only. Except as expressly provided in these Terms, no part of the Site and no Content may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
+
+            <h2>3. User Representations</h2>
+            <p>By using the Site, you represent and warrant that:</p>
+            <ul>
+                <li>All registration information you submit (if any) will be true, accurate, current, and complete.</li>
+                <li>You have the legal capacity and agree to comply with these Terms of Service.</li>
+                <li>You will not access the Site through automated or non-human means, whether through a bot, script, or otherwise.</li>
+                <li>You will not use the Site for any illegal or unauthorized purpose.</li>
+            </ul>
+
+            <h2>4. Product Purchases and Payment</h2>
+            <p>We accept various forms of payment. You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Site. Prices for our products are subject to change without notice.</p>
+            <p>We reserve the right to refuse any order placed through the Site. We may, in our sole discretion, limit or cancel quantities purchased per person, per household, or per order.</p>
+
+            <h2>5. Limitation of Liability</h2>
+            <p>In no event will Alien Fossil or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, or other damages arising from your use of the Site or our products.</p>
+
+            <h2>6. Governing Law</h2>
+            <p>These Terms shall be governed by and defined by the laws of the State of New York, without regard to its conflict of law principles. Any legal action of whatever nature shall be brought in the state and federal courts located in [Insert Specific County, NY].</p>
+
+            <h2>7. Contact Us</h2>
+            <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</p>
+            <p>Alien Fossil<br>Hopewell Junction, NY<br>Email: alienfosdilgames@gmail.com</p>
+        </div>
+    </main>
+    
+  <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4 class="footer-heading">Explore</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="games.html">Table Top Games</a></li>
+                <li><a href="games.html#video">Video Games</a></li> 
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <p>Email: <a href="mailto:alienfosdilgames@gmail.com">alienfosdilgames@gmail.com</a></p>
+            <p>Location: Hopewell Junction, NY</p>
+            
+            <a href="contact.html" class="footer-contact-btn">Open Contact Form</a>
+        </div>
+
+        <div class="footer-section footer-legal">
+            <h4 class="footer-heading">Legal</h4>
+            <ul>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                <li><a href="terms_of_service.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Alien Fossil. All rights reserved.</p>
+    </div>
+</footer>
+<style>
+    /* ----------------------------------- */
+    /* FOOTER STYLES */
+    /* ----------------------------------- */
+    .site-footer {
+        background: #000;
+        color: #fff;
+        padding: 40px 50px 10px;
+        border-top: 3px solid #00ff88; /* A bright divider line */
+        margin-top: auto; /* Ensures footer sits at bottom if page content is short */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        gap: 30px;
+    }
+
+    .footer-section {
+        flex: 1 1 200px; /* Allows sections to wrap and grow/shrink */
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        /* Using the gradient from the homepage headers */
+        background: linear-gradient(90deg, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section a, .footer-section p {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+    }
+
+    /* Hover effect for standard links */
+    .footer-section ul a:hover, .footer-section p a:hover {
+        color: #00ff88; 
+    }
+    
+    /* NEW BUTTON STYLE */
+    .footer-contact-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #00ff88, #00ccff);
+        color: #000 !important; /* Force black text for contrast */
+        font-weight: bold;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .footer-contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 255, 136, 0.4);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        color: #888;
+        padding-bottom: 10px;
+    }
+
+    /* Media Query for Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .site-footer {
+            padding: 30px 20px 10px;
+        }
+
+        .footer-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 100%;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05); /* Separator */
+        }
+        
+        .footer-section:last-child {
+            border-bottom: none;
+        }
+
+        .footer-bottom {
+            margin-top: 10px;
+        }
+    }
+</style>
+
+    </body>
+</html>
