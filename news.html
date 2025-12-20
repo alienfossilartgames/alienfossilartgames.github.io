@@ -265,26 +265,19 @@
 
 /* Media Query for Mobile Responsiveness */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column !important; /* Forces Logo on top of Nav */
-        padding: 15px 10px !important;
-        height: auto !important;
-        display: flex !important;
-        align-items: center !important;
-    }
 
-    .logo {
-        margin-bottom: 10px !important;
-        height: 40px !important;
-    }
+            header {
+                padding: 15px 20px;
+            }
 
-    nav {
-        display: grid !important; /* Switches to a grid system */
-        grid-template-columns: 1fr 1fr !important; /* Forces 2 equal columns */
-        gap: 8px !important;
-        width: 100% !important;
-        padding: 5px !important;
-    }
+            .logo {
+                height: 40px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
 
     nav a {
         margin-left: 0 !important;
