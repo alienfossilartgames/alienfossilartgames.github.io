@@ -263,80 +263,80 @@
             font-weight: bold;
         }
 
-/* Mobile Responsiveness - Matched to About Page */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column; /* Stacks logo on top of nav */
-                padding: 15px 10px;    
-                height: auto;          
-            }
+/* Mobile Responsiveness - Exact Match to About Page */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stacks logo on top of nav */
+        padding: 15px 10px;    
+        height: auto;          /* Allows header to grow to fit the logo + grid */
+    }
 
-            .logo {
-                margin-bottom: 15px;
-            }
+    .logo {
+        margin-bottom: 15px;   /* Space between logo and menu */
+    }
 
-            nav {
-                display: grid;
-                grid-template-columns: 1fr 1fr; /* Two columns like the About page */
-                gap: 10px;
-                width: 100%;
-            }
+    nav {
+        display: grid;         /* This turns the menu into a grid */
+        grid-template-columns: 1fr 1fr; /* This forces exactly 2 columns */
+        gap: 10px;
+        width: 100%;
+    }
 
-            nav a {
-                margin-left: 0;
-                justify-content: center;
-                font-size: 14px;
-            }
+    nav a {
+        margin-left: 0;
+        justify-content: center;
+        font-size: 14px;
+    }
 
-            body {
-                padding-top: 160px; /* Pushes content down for the taller header */
-            }
+    body {
+        padding-top: 160px;    /* Pushes content down so header doesn't cover it */
+    }
 
-            .news-section {
-                padding: 30px 20px;
-            }
+    .news-section {
+        padding: 30px 20px;
+    }
 
-            .image-with-space {
-                margin-top: 20px;
-            }
+    .image-with-space {
+        margin-top: 20px;
+    }
 
-            .news-content h1 {
-                font-size: 36px;
-            }
+    .news-content h1 {
+        font-size: 36px;
+    }
 
-            .featured-stories {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .featured-card {
-                padding: 20px;
-            }
+    .featured-stories {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .featured-card {
+        padding: 20px;
+    }
 
-            .featured-card h2 {
-                font-size: 24px;
-            }
-            
-            .past-stories h2 {
-                font-size: 28px;
-            }
+    .featured-card h2 {
+        font-size: 24px;
+    }
+    
+    .past-stories h2 {
+        font-size: 28px;
+    }
 
-            .past-story-row {
-                flex-wrap: wrap;
-                padding: 15px 0;
-            }
-            
-            .past-story-row .date {
-                flex: 1 1 100%; 
-                margin-bottom: 5px;
-            }
-            
-            .past-story-row .title {
-                flex: 1 1 auto;
-                margin-right: 10px;
-                font-size: 16px;
-            }
-        }
+    .past-story-row {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+    
+    .past-story-row .date {
+        flex: 1 1 100%; 
+        margin-bottom: 5px;
+    }
+    
+    .past-story-row .title {
+        flex: 1 1 auto;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+}
     </style>
 </head>
 <body>
