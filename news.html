@@ -263,24 +263,20 @@
             font-weight: bold;
         }
 
-/* Mobile Responsiveness - Exact Match to About Page */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stacks logo on top of nav */
-        padding: 15px 10px;    
-        height: auto;          /* Allows header to grow to fit the logo + grid */
-    }
+	@media (max-width: 768px) {
+    	    header {
+                padding: 15px 20px;
+            }
 
-    .logo {
-        margin-bottom: 15px;   /* Space between logo and menu */
-    }
+            .logo {
+                height: 40px;
+            }
 
-    nav {
-        display: grid;         /* This turns the menu into a grid */
-        grid-template-columns: 1fr 1fr; /* This forces exactly 2 columns */
-        gap: 10px;
-        width: 100%;
-    }
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
+            }
+
 
     nav a {
         margin-left: 0;
