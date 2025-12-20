@@ -263,51 +263,51 @@
             font-weight: bold;
         }
 
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-
+/* Mobile Responsiveness - Matched to About Page */
+        @media (max-width: 900px) {
             header {
-                padding: 15px 20px;
+                flex-direction: column; /* Stacks logo on top of nav */
+                padding: 15px 10px;    
+                height: auto;          
             }
 
             .logo {
-                height: 40px;
+                margin-bottom: 15px;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* Two columns like the About page */
+                gap: 10px;
+                width: 100%;
             }
 
             nav a {
-                margin-left: 15px;
+                margin-left: 0;
+                justify-content: center;
                 font-size: 14px;
             }
 
-    nav a {
-        margin-left: 0 !important;
-        padding: 5px !important;
-        font-size: 13px !important; /* Slightly smaller to fit side-by-side */
-        justify-content: center !important;
-        border: 1px solid rgba(255,255,255,0.1); /* Adds a subtle box to each item */
-        border-radius: 4px;
-    }
+            body {
+                padding-top: 160px; /* Pushes content down for the taller header */
+            }
 
-    /* Pushes the News content down so the header doesn't cover it */
-    body {
-        padding-top: 180px !important; 
-    }
+            .news-section {
+                padding: 30px 20px;
+            }
 
-    /* Fixes the "Latest Excavations" heading size for phones */
-    .news-content h1 {
-        font-size: 28px !important;
-        margin-top: 20px;
-    }
+            .image-with-space {
+                margin-top: 20px;
+            }
 
-    /* Ensures the header image doesn't get cut off */
-    .image-with-space {
-        margin-top: 20px !important;
-    }
+            .news-content h1 {
+                font-size: 36px;
+            }
 
-    .featured-stories {
-        flex-direction: column;
-        gap: 30px;
-    }
+            .featured-stories {
+                flex-direction: column;
+                gap: 30px;
+            }
             
             .featured-card {
                 padding: 20px;
@@ -327,7 +327,7 @@
             }
             
             .past-story-row .date {
-                flex: 1 1 100%; /* Date takes full width on small screens */
+                flex: 1 1 100%; 
                 margin-bottom: 5px;
             }
             
