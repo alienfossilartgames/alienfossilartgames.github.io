@@ -265,7 +265,8 @@
         /* Mobile Responsiveness */
         @media (max-width: 900px) {
             .contact-section {
-                padding: 30px 20px;
+                height: auto;           /* Allows the header to grow to fit both lines */
+		padding: 30px 20px;
             }
 
             .contact-content h1 {
@@ -274,8 +275,6 @@
             
             .contact-layout {
                 flex-direction: column;
-		padding: 15px 10px;    /* Reduces side padding for more room */
-        	height: auto;           /* Allows the header to grow to fit both lines */
                 gap: 30px;
             }
 
