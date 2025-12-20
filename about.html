@@ -131,55 +131,38 @@
             }
         }
 
-      /* Mobile Responsiveness */
-        @media (max-width: 900px) {
-            .news-section {
-                padding: 30px 20px;
-		padding: 15px 10px;    /* Reduces side padding for more room */
-     	   	height: auto;           /* Allows the header to grow to fit both lines */
+        @media (max-width: 768px) {
+            header {
+        	flex-direction: column; /* Stacks logo on top of nav */
+        	padding: 15px 10px;    
+        	height: auto;           
             }
 
-	    .image-with-space {
- 		 margin-top: 100px;
-	    }
-
-            .news-content h1 {
-                font-size: 36px;
+            .logo {
+                height: 40px;
             }
 
-            .featured-stories {
-                flex-direction: column;
-                gap: 30px;
+            nav a {
+                margin-left: 15px;
+                font-size: 14px;
             }
             
-            .featured-card {
-                padding: 20px;
+            .about-section {
+                padding: 30px 20px;
             }
 
-            .featured-card h2 {
+            .about-content h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .about-content h3 {
                 font-size: 24px;
             }
-            
-            .past-stories h2 {
-                font-size: 28px;
-            }
 
-            .past-story-row {
-                flex-wrap: wrap;
-                padding: 15px 0;
-            }
-            
-            .past-story-row .date {
-                flex: 1 1 100%; /* Date takes full width on small screens */
-                margin-bottom: 5px;
-            }
-            
-            .past-story-row .title {
-                flex: 1 1 auto;
-                margin-right: 10px;
+            .about-content p {
                 font-size: 16px;
             }
-
         }
     </style>
 </head>
