@@ -247,13 +247,48 @@
                 right: 10px;
             }
 
-	    .carousel-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: brightness(1);
-        }
+/* Mobile Responsiveness for Carousel */
+@media (max-width: 768px) {
+    /* 1. Reset the container to allow the text to flow below the image */
+    .carousel-item {
+        flex-direction: column; /* Stacks image top, text bottom */
+        height: auto !important; /* Allows the height to grow based on content */
+        min-height: 100vh;
+    }
+
+    /* 2. Fix the Image Container */
+    .carousel-image {
+        width: 100%;
+        height: 300px; /* Set a fixed height for the landscape image on mobile */
+        position: relative; /* Remove absolute positioning from desktop */
+    }
+
+    /* 3. Ensure the image fits without being cut off */
+    .carousel-image img {
+        object-fit: contain; /* Shows the WHOLE landscape image */
+        background: #000;    /* Adds black bars if the image is too wide */
+    }
+
+    /* 4. Fix the Text Overlay */
+    .text-overlay {
+        position: relative; /* Moves it out of "floating" mode */
+        width: 100%;
+        padding: 30px 20px;
+        transform: none !important; /* Resets the desktop centering */
+        left: 0 !important;
+        text-align: center;
+        background: #000; /* Ensures background is solid under the text */
+    }
+
+    .text-overlay h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .text-overlay p {
+        font-size: 16px;
+    }
+}
 
 
         }
