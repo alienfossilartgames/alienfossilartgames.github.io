@@ -151,7 +151,7 @@
             position: relative;
             text-align: center;
             border-bottom: 0px solid #00ff88;
-	    padding: 30px;
+	    padding: 0px;
         }
         
         .game-banner h1 {
@@ -285,7 +285,7 @@
         /* Image Placeholders */
         .support-image {
             width: 100%;
-            height: 300px;
+            height: auto;
             background: linear-gradient(135deg, #111, #444);
             border: 2px solid #00ccff;
             display: flex;
@@ -305,8 +305,12 @@
         
         .image-row .support-image {
             flex: 1;
-            height: 250px;
+            
         }
+
+	.title-image {
+	width: 100%;
+	}
 
 /* Updated Mobile Responsiveness for Herdz.html */
 @media (max-width: 768px) {
@@ -346,7 +350,8 @@
     .game-banner img {
         width: 100% !important;
         height: auto !important;
-        max-width: 350px; /* Keeps it from getting too huge on larger phones */
+        max-width: 800px; /* Keeps it from getting too huge on larger phones */
+	margin: 10px !important;
     }
 
     .game-section {
@@ -362,7 +367,11 @@
         flex-direction: column !important;
         gap: 20px;
     }
-}
+	.title-image {
+	margin: 10px;
+	width: 75vw;
+    }
+
         
         /* Footer Contact Button CSS (Copied from theGreatWork.html) */
         .footer-contact-btn {
@@ -441,7 +450,7 @@
     <div class="game-banner">
         <h1>Herdz</h1>
         <p>A Fast-Paced Card Game of Prehistoric Survival and Dinosaur Strategy.</p>
-       <img src="images/HerdzBanner.png" alt="Herdz" style="margin: 10px;" width=800px>   
+       <img class="support-image" src="images/HerdzBanner.png" alt="Herdz">   
     </div>
 
     <main class="game-section">
