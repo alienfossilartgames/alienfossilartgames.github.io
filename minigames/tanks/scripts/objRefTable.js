@@ -139,6 +139,7 @@ self.C3_JsPropNameTable = [
 	{ControlsText6: 0},
 	{Wall2: 0},
 	{FinalScoreText: 0},
+	{Logo: 0},
 	{HealthExists1: 0},
 	{AmmoExists: 0},
 	{Lives: 0},
@@ -195,5 +196,6 @@ self.InstanceType = {
 	ControlsText5: class extends self.ITextInstance {},
 	ControlsText6: class extends self.ITextInstance {},
 	Wall2: class extends self.ITiledBackgroundInstance {},
-	FinalScoreText: class extends self.ITextInstance {}
+	FinalScoreText: class extends self.ITextInstance {},
+	Logo: class extends self.ISpriteInstance {}
 }
