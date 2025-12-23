@@ -81,6 +81,7 @@ self.C3_JsPropNameTable = [
 	{Touch: 0},
 	{UpArrow: 0},
 	{DownArrow: 0},
+	{Logo: 0},
 	{SineVal: 0},
 	{CurrentTurn: 0},
 	{Fired: 0}
@@ -110,5 +111,6 @@ self.InstanceType = {
 	TitleBackground: class extends self.ITiledBackgroundInstance {},
 	Touch: class extends self.IInstance {},
 	UpArrow: class extends self.ISpriteInstance {},
-	DownArrow: class extends self.ISpriteInstance {}
+	DownArrow: class extends self.ISpriteInstance {},
+	Logo: class extends self.ISpriteInstance {}
 }
