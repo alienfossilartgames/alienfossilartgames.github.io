@@ -1,44 +1,114 @@
 /* =========================================
-   ALIEN FOSSIL - GLOBAL STYLES
+   GLOBAL STYLES
    ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Change the overall background and text color of the site */
-body {
-    background-color: #121212; /* A dark, sleek background */
-    color: #e0e0e0; /* Off-white text for readability */
+/* Forcing pure black to kill the Bootstrap grey gap */
+body, body.bg-dark {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000 !important; 
+    color: #fff;
+    overflow-x: hidden;
 }
 
 /* =========================================
-   CUSTOM NAVBAR STYLES
+   UNIVERSAL NAVBAR
    ========================================= */
-
-/* Override Bootstrap's default dark navbar background */
-.navbar.bg-dark {
-    background-color: #0a0a0a !important; 
-    border-bottom: 2px solid #444; 
+.custom-navbar {
+    background-color: #000000 !important;
+    border-bottom: 3px solid #00ff88 !important; /* Force neon green */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
 }
 
-/* Add a hover effect to your navigation links */
+.navbar-brand img {
+    transition: filter 0.3s;
+}
+
+.navbar-brand img:hover {
+    filter: brightness(0) invert(0) drop-shadow(0 0 10px #00ff88);
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-left: 20px;
+    display: inline-flex; /* Aligns SVG icons with text */
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-nav .nav-link svg {
+    width: 18px;
+    height: 18px;
+}
+
 .navbar-nav .nav-link:hover {
-    color: #f8f9fa !important;
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
-    transition: 0.3s ease-in-out;
+    color: #00ff88 !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #00ccff !important;
+}
+
+.navbar-toggler {
+    border-color: #00ff88 !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 136, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 /* =========================================
-   CUSTOM FOOTER STYLES
+   UNIVERSAL FOOTER
    ========================================= */
-
-footer.bg-dark {
-    background-color: #0a0a0a !important;
+footer {
+    background: #000 !important;
+    border-top: 3px solid #00ff88 !important;
+    padding-top: 40px;
 }
 
-/* Change the color of footer links on hover */
+footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ff88, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+footer a {
+    color: #ddd !important;
+    transition: color 0.3s;
+}
+
 footer a:hover {
-    color: #ffffff !important;
-    text-decoration: underline !important;
+    color: #00ff88 !important;
 }
+
+.btn-outline-light {
+    background: linear-gradient(135deg, #00ff88, #00ccff) !important;
+    color: #000 !important;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 255, 136, 0.4);
+}
+
 /* =========================================
    HOMEPAGE CAROUSEL
    ========================================= */
@@ -189,7 +259,7 @@ footer a:hover {
    MEDIA QUERIES (Mobile Adjustments)
    ========================================= */
 @media (max-width: 768px) {
-    .navbar {
+    .custom-navbar {
         padding: 15px 20px !important;
     }
     
