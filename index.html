@@ -9,7 +9,7 @@ title: Home
         <div class="text-overlay">
             <h2>ETERNAL FORGE</h2>
             <p>An easy to learn, completely customizable TTRPG that gives you the freedom and flexibility to create the type of gaming experience you want.</p>
-            <p>Infinite Worlds. Infinite Adventures.</p>
+            <p>Infinite worlds. Infinite possibilities.</p>
             <a href="EternalForge.html" class="cta-button">Begin Your Adventure!</a>
         </div>
     </div>
@@ -48,4 +48,66 @@ title: Home
     <div class="nav-arrow next">›</div>
 
     <div class="carousel-controls">
-        <div class="
+        <div class="carousel-dot active" data-slide="0"></div>
+        <div class="carousel-dot" data-slide="1"></div>
+        <div class="carousel-dot" data-slide="2"></div>
+        <div class="carousel-dot" data-slide="3"></div>
+    </div>
+</div>
+
+<script>
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+    let autoPlayInterval;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = (n + totalSlides) % totalSlides;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 8000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    document.querySelector('.nav-arrow.next').addEventListener('click', () => {
+        nextSlide();
+        stopAutoPlay();
+        startAutoPlay();
+    });
+
+    document.querySelector('.nav-arrow.prev').addEventListener('click', () => {
+        prevSlide();
+        stopAutoPlay();
+        startAutoPlay();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoPlay();
+            startAutoPlay();
+        });
+    });
+
+    startAutoPlay();
+</script>
