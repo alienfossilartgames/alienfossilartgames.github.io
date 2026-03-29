@@ -1,0 +1,41 @@
+/* =========================================
+   ALIEN FOSSIL - GLOBAL STYLES
+   ========================================= */
+
+/* Change the overall background and text color of the site */
+body {
+    background-color: #121212; /* A dark, sleek background */
+    color: #e0e0e0; /* Off-white text for readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================
+   CUSTOM NAVBAR STYLES
+   ========================================= */
+
+/* Override Bootstrap's default dark navbar background */
+.navbar.bg-dark {
+    background-color: #0a0a0a !important; 
+    border-bottom: 2px solid #444; 
+}
+
+/* Add a hover effect to your navigation links */
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa !important;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease-in-out;
+}
+
+/* =========================================
+   CUSTOM FOOTER STYLES
+   ========================================= */
+
+footer.bg-dark {
+    background-color: #0a0a0a !important;
+}
+
+/* Change the color of footer links on hover */
+footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
