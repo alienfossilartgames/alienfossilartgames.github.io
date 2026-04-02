@@ -298,6 +298,11 @@ a.btn.btn-:hover {
     .-content {
         padding-top: 20px;
     }
+
+   /* Force images to focus perfectly on the center on phones */
+    .carousel-item img {
+        object-position: center center !important;
+    }
     
     .hero-content h2 {
         font-size: 32px;
