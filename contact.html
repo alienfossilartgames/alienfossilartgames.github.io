@@ -10,7 +10,7 @@ title: Alien Fossil - Contact Us
             <h1 class="display-4 fw-bold text-uppercase hero-gradient-text border-bottom border-success pb-3 mb-4" style="letter-spacing: 2px;">
                 Contact Alien Fossil
             </h1>
-            <p class="fs-5 text-light mb-5">
+            <p class="fs-5 mb-5" style="color: #ddd;">
                 We love hearing from fellow explorers! Whether you have a question about our lore, a media inquiry, or just want to say hi, use the form below.
             </p>
 
@@ -20,19 +20,63 @@ title: Alien Fossil - Contact Us
                     <form action="mailto:alienfossilgames@gmail.com" method="POST" enctype="text/plain">
                         
                         <div class="mb-4">
-                            <label for="name" class="form-label fw-bold text-info fs-5">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control form-control-lg bg-dark text-light border-success shadow-none" style="border-width: 2px;" required>
+                            <label for="name" class="form-label fw-bold fs-5 mb-2" style="color: #00ccff;">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control p-3 text-light shadow-none" style="background-color: #000; border: 2px solid #00ff88; border-radius: 4px;" required>
                         </div>
 
                         <div class="mb-4">
-                            <label for="email" class="form-label fw-bold text-info fs-5">Your Email</label>
-                            <input type="email" id="email" name="email" class="form-control form-control-lg bg-dark text-light border-success shadow-none" style="border-width: 2px;" required>
+                            <label for="email" class="form-label fw-bold fs-5 mb-2" style="color: #00ccff;">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-control p-3 text-light shadow-none" style="background-color: #000; border: 2px solid #00ff88; border-radius: 4px;" required>
                         </div>
 
                         <div class="mb-4">
-                            <label for="subject" class="form-label fw-bold text-info fs-5">Subject / Inquiry Type</label>
-                            <select id="subject" name="subject" class="form-select form-select-lg bg-dark text-light border-success shadow-none" style="border-width: 2px;" required>
+                            <label for="subject" class="form-label fw-bold fs-5 mb-2" style="color: #00ccff;">Subject / Inquiry Type</label>
+                            <select id="subject" name="subject" class="form-select p-3 text-light shadow-none" style="background-color: #000; border: 2px solid #00ff88; border-radius: 4px;" required>
                                 <option value="" disabled selected>Select a Reason</option>
                                 <option value="General Inquiry">General Inquiry</option>
                                 <option value="Game Support">Game Support</option>
-                                <option value="Media/Press">Media /
+                                <option value="Media/Press">Media / Press</option>
+                                <option value="Business Inquiry">Business Inquiry</option>
+                                <option value="Feedback">Feedback/Suggestions</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-bold fs-5 mb-2" style="color: #00ccff;">Message</label>
+                            <textarea id="message" name="message" class="form-control p-3 text-light shadow-none" rows="6" style="background-color: #000; border: 2px solid #00ff88; border-radius: 4px; resize: vertical;" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn fw-bold text-uppercase mt-2" style="padding: 12px 30px; font-size: 18px; background: linear-gradient(90deg, #00ff88, #00ccff); color: #000; border: none; border-radius: 4px; transition: transform 0.2s, opacity 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.opacity='0.9';" onmouseout="this.style.transform='none'; this.style.opacity='1';">
+                            Send Transmission
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="p-4 rounded h-100" style="background: rgba(0, 0, 0, 0.8); border: 2px solid #00ccff;">
+                        
+                        <h3 class="h4 mb-4 pb-2" style="color: #00ff88; border-bottom: 1px solid rgba(0, 255, 136, 0.3);">
+                            Direct Communications
+                        </h3>
+                        
+                        <div class="mb-4">
+                            <strong class="text-light d-block fs-5 mb-1">Email Us Directly:</strong>
+                            <a href="mailto:alienfossilgames@gmail.com" style="color: #00ccff; text-decoration: none; font-size: 16px;">alienfossilgames@gmail.com</a>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <strong class="text-light d-block fs-5 mb-1">Location:</strong>
+                            <span class="text-light" style="font-size: 16px;">Hopewell Junction, NY</span>
+                        </div>
+                        
+                        <p class="text-light mt-4 pt-3" style="line-height: 1.5; font-size: 16px;">
+                            For game support, please allow 48 hours for a response. For press inquiries, please mark your subject accordingly.
+                        </p>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
