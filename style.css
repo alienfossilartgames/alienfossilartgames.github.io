@@ -97,7 +97,7 @@ footer a:hover {
 
 .btn-outline-light {
     background: linear-gradient(135deg, #00ff88, #00ccff) !important;
-    color: #000 !important;
+    color: #00ff88 !important;
     font-weight: bold;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
@@ -182,8 +182,8 @@ footer a:hover {
 .cta-button {
     display: inline-block;
     padding: 15px 35px;
-    background: linear-gradient(135deg, #00ff88, #00ccff);
-    color: #000;
+    background: #00ff88 !important; /* Changed to solid neon green */
+    color: #000 !important; /* Pure black text */
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -192,8 +192,8 @@ footer a:hover {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
-    color: #00ff88;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.6);
+    color: #000 !important;
 }
 
 .carousel-controls {
