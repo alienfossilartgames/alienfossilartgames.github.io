@@ -318,4 +318,25 @@ a.btn.btn-:hover {
         padding: 10px 25px;
         font-size: 14px;
     }
+    /* =========================================
+   CAROUSEL BUTTONS (Ultra-Specific Override)
+   ========================================= */
+    a.btn.btn-hero {
+    background-color: #111111 !important; 
+    color: #00ff88 !important; 
+    font-weight: bold !important;
+    border: 2px solid #00ff88 !important; 
+    padding: 12px 35px !important;
+    border-radius: 5px !important;
+    text-decoration: none !important;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s !important;
+    }
+
+    a.btn.btn-hero:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4) !important;
+    background-color: #00ff88 !important; 
+    color: #000000 !important; 
+    }
+   
 }
