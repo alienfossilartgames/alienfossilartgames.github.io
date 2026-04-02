@@ -95,9 +95,10 @@ footer a:hover {
     color: #00ff88 !important;
 }
 
+/* Footer Contact Button */
 .btn-outline-light {
-    background: linear-gradient(135deg, #00ff88, #00ccff) !important;
-    color: #00ff88 !important;
+    background: #00ff88 !important; /* Solid neon green */
+    color: #000000 !important; /* Black text */
     font-weight: bold;
     border: none;
     box-shadow: 0 4px 10px rgba(0, 255, 136, 0.2);
@@ -106,7 +107,8 @@ footer a:hover {
 
 .btn-outline-light:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 6px 15px rgba(0, 255, 136, 0.6);
+    color: #000000 !important;
 }
 
 /* =========================================
@@ -176,155 +178,6 @@ footer a:hover {
     font-size: 18px;
     line-height: 1.6;
     color:#ddd;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 35px;
-    background: #00ff88 !important; /* Changed to solid neon green */
-    color: #000 !important; /* Pure black text */
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.6);
-    color: #000 !important;
-}
-
-.carousel-controls {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    display: flex;
-    gap: 15px;
-}
-
-.carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-}
-
-.carousel-dot.active {
-    background: #00ff88;
-    border-color: #00ff88;
-    transform: scale(1.2);
-}
-
-.carousel-dot:hover {
-    background: rgba(0, 255, 136, 0.7);
-}
-
-.nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    font-size: 30px;
-    padding: 20px 25px;
-    cursor: pointer;
-    z-index: 100;
-    transition: all 0.3s;
-    user-select: none;
-}
-
-.nav-arrow:hover {
-    background: rgba(0, 255, 136, 0.3);
-    border-color: #00ff88;
-}
-
-.nav-arrow.prev {
-    left: 30px;
-}
-
-.nav-arrow.next {
-    right: 30px;
-}
-
-/* =========================================
-   CAROUSEL BUTTONS (Ultra-Specific Override)
-   ========================================= */
-.btn-hero {
-    background-color: #111111 !important; 
-    color: #00ff88 !important; 
-    font-weight: bold !important;
-    border: 2px solid #00ff88 !important; 
-    padding: 12px 35px !important;
-    border-radius: 5px !important;
-    text-decoration: none !important;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s !important;
-}
-
-.btn-hero:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4) !important;
-    background-color: #00ff88 !important; 
-    color: #000000 !important; 
-}
-
-.hero-gradient-text {
-    color: #00ff88 !important; /* Forces the text to be neon green */
-    text-shadow: 0 0 15px rgba(0, 255, 136, 0.4); /* Adds a cool neon glow effect */
-}
-
-
-/* =========================================
-   MEDIA QUERIES (Mobile Adjustments)
-   ========================================= */
-@media (max-width: 768px) {
-    /* Shrink the carousel height on phones */
-    .carousel-inner {
-        height: 60vh !important; /* Drops the height from 100% to 60% */
-        min-height: 450px; /* Prevents it from getting too tiny on very small phones */
-    }
-
-    /* Keep the navbar spacing correct */
-    .custom-navbar {
-        padding: 15px 20px !important;
-    }
-    
-    /* Adjust text size and position to fit the newly shrunken images */
-    .-content {
-        padding-top: 20px;
-    }
-
-   /* Force images to focus perfectly on the center on phones */
-    .carousel-item img {
-        object-position: center center !important;
-    }
-    
-    .hero-content h2 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px !important;
-        margin-bottom: 15px !important;
-    }
-
-    .carousel-caption {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-        bottom: 20px !important; /* Nudges the text up slightly */
-    }
-
-    .btn-hero {
-        padding: 10px 25px;
-        font-size: 14px;
-    }
+    margin-bottom: 30px
 
 }
