@@ -255,7 +255,7 @@ footer a:hover {
     right: 30px;
 }
 
-a.btn.btn-hero {
+a.btn.btn- {
     background-color: #111111 !important; 
     color: #00ff88 !important; 
     font-weight: bold !important;
@@ -266,12 +266,19 @@ a.btn.btn-hero {
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s !important;
 }
 
-a.btn.btn-hero:hover {
+a.btn.btn-:hover {
     transform: translateY(-3px) !important;
     box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4) !important;
     background-color: #00ff88 !important; 
     color: #000000 !important; 
 }
+
+.hero-gradient-text {
+    color: #00ff88 !important; /* Forces the text to be neon green */
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.4); /* Adds a cool neon glow effect */
+}
+
+
 /* =========================================
    MEDIA QUERIES (Mobile Adjustments)
    ========================================= */
@@ -288,7 +295,7 @@ a.btn.btn-hero:hover {
     }
     
     /* Adjust text size and position to fit the newly shrunken images */
-    .hero-content {
+    .-content {
         padding-top: 20px;
     }
     
