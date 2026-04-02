@@ -259,20 +259,39 @@ footer a:hover {
    MEDIA QUERIES (Mobile Adjustments)
    ========================================= */
 @media (max-width: 768px) {
+    /* Shrink the carousel height on phones */
+    .carousel-inner {
+        height: 60vh !important; /* Drops the height from 100% to 60% */
+        min-height: 450px; /* Prevents it from getting too tiny on very small phones */
+    }
+
+    /* Keep the navbar spacing correct */
     .custom-navbar {
         padding: 15px 20px !important;
     }
     
-    .text-overlay {
-        margin-left: 20px;
-        padding: 20px;
+    /* Adjust text size and position to fit the newly shrunken images */
+    .hero-content {
+        padding-top: 20px;
     }
     
-    .text-overlay h2 {
+    .hero-content h2 {
         font-size: 32px;
     }
 
-    .carousel-image {
-        filter: brightness(0.5);
+    .hero-content p {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .carousel-caption {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        bottom: 20px !important; /* Nudges the text up slightly */
+    }
+
+    .btn-hero {
+        padding: 10px 25px;
+        font-size: 14px;
     }
 }
