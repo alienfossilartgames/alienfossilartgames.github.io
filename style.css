@@ -254,7 +254,22 @@ footer a:hover {
 .nav-arrow.next {
     right: 30px;
 }
+.btn-hero {
+    background-color: #111111 !important; 
+    color: #00ff88 !important; /* Neon green text */
+    font-weight: bold;
+    border: 2px solid #00ff88 !important; /* Neon green border */
+    padding: 12px 35px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
 
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+    background-color: #00ff88 !important; /* Fills in green on hover */
+    color: #000000 !important; /* Text turns black on hover */
+}
 /* =========================================
    MEDIA QUERIES (Mobile Adjustments)
    ========================================= */
