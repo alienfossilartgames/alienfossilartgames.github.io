@@ -1,118 +1,44 @@
----
-layout: default
-title: Home
----
-
-<div class="carousel-container">
-    <div class="carousel-slide active">
-        <img src="images/EternalForge_HomePage1.png" alt="Eternal Forge" class="carousel-image">
-        <div class="text-overlay">
-            <h2>ETERNAL FORGE</h2>
-            <p>An easy to learn, completely customizable TTRPG that gives you the freedom and flexibility to create the type of gaming experience you want.</p>
-            <p>Infinite Worlds. Infinite Adventures.</p>
-            <a href="EternalForge.html" class="cta-button">Begin Your Adventure!</a>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="images/KaijuKlash_HomePage1.png" alt="Kaiju Klash! TTRPG" class="carousel-image">
-        <div class="text-overlay">
-            <h2>Kaiju Klash!</h2>
-            <p>Kaiju Klash is a fast, cinematic monster-brawling TTRPG where you create towering beasts, unleash city-shattering attacks, and fight for dominance in spectacular, over-the-top battles.</p>
-            <a href="KaijuKlash.html" class="cta-button">COMING SOON!</a>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="images/TheGreatWork_HomePage1.png" alt="The Great Work Card Game" class="carousel-image">
-        <div class="text-overlay">
-            <h2>The Great Work</h2>
-            <p>An elegant and addiciting card game of magnificant magic and magisterial manners.</p>
-            <p>Cast spells. Destroy your enemies. Ascend the ranks.</p>
-            <p>Enjoy a cup of victory tea.</p>
-            <a href="theGreatWork.html" class="cta-button">COMING SOON!</a>
-        </div>
-    </div>
-
-    <div class="carousel-slide">
-        <img src="images/Herdz_HomePage1.png" alt="Herdz Dinosaur Card Game" class="carousel-image">
-        <div class="text-overlay">
-            <h2>Herdz</h2>
-            <p>Build your pack. Dodge extinction. Herdz is a fast-paced card game of strength and strategy. Compete to grow the strongest dinosaur herd while sabotaging your rivals and surviving prehistoric, table-shaking natural disasters.</p>
-            <p>Build, battle, and roar your way to victory!</p>
-            <a href="Herdz.html" class="cta-button">COMING SOON!</a>
-        </div>
-    </div>
-
-<div class="nav-arrow prev d-none d-md-flex" onclick="...">
-    &#10094;
-</div>
-
-<div class="nav-arrow next d-none d-md-flex" onclick="...">
-    &#10095;
-</div>
-
-    <div class="carousel-controls">
-        <div class="carousel-dot active" data-slide="0"></div>
-        <div class="carousel-dot" data-slide="1"></div>
-        <div class="carousel-dot" data-slide="2"></div>
-        <div class="carousel-dot" data-slide="3"></div>
-    </div>
-</div>
-
-<script>
-    // Carousel functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const totalSlides = slides.length;
-    let autoPlayInterval;
-
-    function showSlide(n) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Fossil Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importing a sci-fi/tech thematic font for the excavation vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: #050505; /* Deep dark background */
+        }
         
-        currentSlide = (n + totalSlides) % totalSlides;
+        /* Subtle blinking animation for the underscore to make it feel like an active terminal */
+        .blinking-cursor {
+            animation: blink 1s step-start infinite;
+        }
         
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="h-screen w-full flex flex-col justify-center items-center px-6 text-center antialiased">
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+    <!-- Logo -->
+    <div class="text-6xl md:text-8xl font-bold text-gray-300 mb-8 blinking-cursor select-none">
+        _
+    </div>
 
-    function prevSlide() {
-        showSlide(currentSlide - 1);
-    }
+    <!-- Green Header -->
+    <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-green-500 mb-6 uppercase tracking-widest leading-snug shadow-green-500/20 drop-shadow-lg">
+        Active Excavation<br class="md:hidden"> in Progress
+    </h1>
 
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 8000);
-    }
+    <!-- White Subheader -->
+    <p class="text-base md:text-lg lg:text-xl text-white font-light tracking-wide opacity-90">
+        Check For Updates Coming Soon!
+    </p>
 
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
-
-    document.querySelector('.nav-arrow.next').addEventListener('click', () => {
-        nextSlide();
-        stopAutoPlay();
-        startAutoPlay();
-    });
-
-    document.querySelector('.nav-arrow.prev').addEventListener('click', () => {
-        prevSlide();
-        stopAutoPlay();
-        startAutoPlay();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            stopAutoPlay();
-            startAutoPlay();
-        });
-    });
-
-    startAutoPlay();
-</script>
+</body>
+</html>
